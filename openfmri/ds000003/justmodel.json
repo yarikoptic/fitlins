@@ -1,0 +1,51 @@
+{
+  "name": "ds003_model001_modelonly",
+  "description": "Defines only the model without contrasts",
+  "input": {
+    "task": "rhymejudgment"
+  },
+  "blocks": [
+    {
+      "level": "run",
+      "transformations": [
+        {
+          "name": "factor",
+          "input": [
+            "trial_type"
+          ]
+        }
+      ],
+      "model": {
+        "HRF_variables": [
+          "trial_type.word",
+          "trial_type.pseudoword"
+        ],
+        "variables": [
+          "trial_type.word",
+          "trial_type.pseudoword",
+          "FramewiseDisplacement",
+          "X",
+          "Y",
+          "Z",
+          "RotX",
+          "RotY",
+          "RotZ",
+          "aCompCor00",
+          "aCompCor01",
+          "aCompCor02",
+          "aCompCor03",
+          "aCompCor04",
+          "aCompCor05"
+        ]
+      }
+    },
+    {
+      "level": "dataset",
+      "model": {
+        "variables": [
+          "word_gt_pseudo"
+        ]
+      }
+    }
+  ]
+}
